@@ -88,8 +88,9 @@ Likewise, to optimize performance, a global cache of prepared statement
 is used throughout the API
 (more precisely, there is one such cache per each Flask worker process).
 
-On the Flask side, the code here takes advantage of Flask's global `g` object
-and its `before_request` hook to make sure each request will find a reference
+On the Flask side, the code here takes advantage of Flask's application-context
+[`g` object](https://flask.palletsprojects.com/en/2.2.x/api/#flask.g)
+and the [`before_request` hook](https://flask.palletsprojects.com/en/2.2.x/api/#flask.Flask.before_request) to make sure each request will find a reference
 to the (one and only) database session, ready for use as `g.session`.
 _(Alternatively, for example only when few endpoints need the database,
 one could simply have a `session = get_session()` in the endpoint function's
