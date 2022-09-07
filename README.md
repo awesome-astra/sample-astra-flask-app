@@ -112,3 +112,9 @@ Flask's [streaming responses](https://flask.palletsprojects.com/en/2.2.x/pattern
 This amounts to returning a `(generator, headers)` pair in the endpoint, and
 taking care of manually constructing, piecewise, a syntactically correct
 JSON on top of the stream of results that keep pouring in from the driver.
+
+### See also
+
+<img src="images/awesome-astra.png?raw=true" align="left" width="40px"/>
+
+[Awesome Astra article about Flask](https://awesome-astra.github.io/docs/pages/develop/frameworks/flask/)
